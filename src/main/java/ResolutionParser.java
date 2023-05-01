@@ -5,7 +5,8 @@ public class ResolutionParser {
         int[] resolutionArray = new int[2];
         String[] tempResolutionArray = stringResolution.split("x");
 
-        resolutionArray = Arrays.stream(tempResolutionArray).mapToInt(Integer::parseInt).toArray();
+        resolutionArray[0] = Integer.parseInt(tempResolutionArray[0]);
+        resolutionArray[1] = Integer.parseInt(tempResolutionArray[1]);
 
         return resolutionArray;
     }

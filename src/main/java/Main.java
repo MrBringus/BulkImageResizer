@@ -24,6 +24,8 @@ public class Main {
                 return resolutionArray;
             } catch (NumberFormatException invalidInputException) {
                 System.out.println("The resolution values may only use numeric characters! (e.g. \"256x256\") Please try again.");
+            } catch (ArrayIndexOutOfBoundsException singleInputException) {
+                System.out.println("There must be two resolution values! (e.g. \"256x256\") Please try again.");
             }
         }
     }
