@@ -40,6 +40,6 @@ class ResolutionParserTest {
     @Test
     public void testTripleValuedInput() {
         stringResolution = "256x256x256";
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionParser.parse(stringResolution));
+        assertThrows(IllegalArgumentException.class, () -> resolutionParser.parse(stringResolution));
     }
 }
