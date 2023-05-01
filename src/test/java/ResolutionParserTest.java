@@ -30,4 +30,10 @@ class ResolutionParserTest {
         stringResolution = "ABCxDEF";
         assertThrows(NumberFormatException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
     }
+
+    @Test
+    public void testSingleValuedInput() {
+        stringResolution = "256";
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+    }
 }
