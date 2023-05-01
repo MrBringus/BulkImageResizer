@@ -36,4 +36,10 @@ class ResolutionParserTest {
         stringResolution = "256";
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
     }
+
+    @Test
+    public void testTripleValuedInput() {
+        stringResolution = "256x256x256";
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+    }
 }
