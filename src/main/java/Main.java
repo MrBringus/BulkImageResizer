@@ -20,8 +20,7 @@ public class Main {
         while (true) {
             String stringResolution = input.nextLine();
             try {
-                int[] resolutionArray = resolutionParser.parse(stringResolution);
-                return resolutionArray;
+                return resolutionParser.parse(stringResolution);
             } catch (NumberFormatException invalidInputException) {
                 System.out.println("The resolution values may only use numeric characters! (e.g. \"256x256\") Please try again.");
             } catch (ArrayIndexOutOfBoundsException singleInputException) {
