@@ -42,4 +42,10 @@ class ResolutionParserTest {
         stringResolution = "256x256x256";
         assertThrows(IllegalArgumentException.class, () -> resolutionParser.parse(stringResolution));
     }
+
+    @Test
+    public void testZeroInput() {
+        stringResolution = "0x256";
+        assertThrows(IllegalArgumentException.class, () -> resolutionParser.parse(stringResolution));
+    }
 }
