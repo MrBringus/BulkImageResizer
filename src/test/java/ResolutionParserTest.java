@@ -28,18 +28,18 @@ class ResolutionParserTest {
     @Test
     public void testAlphabeticInput() {
         stringResolution = "ABCxDEF";
-        assertThrows(NumberFormatException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+        assertThrows(NumberFormatException.class, () -> resolutionParser.parse(stringResolution));
     }
 
     @Test
     public void testSingleValuedInput() {
         stringResolution = "256";
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionParser.parse(stringResolution));
     }
 
     @Test
     public void testTripleValuedInput() {
         stringResolution = "256x256x256";
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> resolutionParser.parse(stringResolution));
     }
 }
