@@ -24,4 +24,10 @@ class ResolutionParserTest {
         testArray = new int[]{256, 256};
         assertArrayEquals(testArray, resolutionArray);
     }
+
+    @Test
+    public void testAlphabeticInput() {
+        stringResolution = "ABCxDEF";
+        assertThrows(NumberFormatException.class, () -> resolutionArray = resolutionParser.parse(stringResolution));
+    }
 }
