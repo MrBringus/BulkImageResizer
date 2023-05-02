@@ -1,3 +1,5 @@
+import exceptions.ExcessiveArgumentException;
+import exceptions.ZeroArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,12 +37,12 @@ class ResolutionParserTest {
     @Test
     public void testTripleValuedInput() {
         stringResolution = "256x256x256";
-        assertThrows(IllegalArgumentException.class, () -> resolutionParser.parse(stringResolution));
+        assertThrows(ExcessiveArgumentException.class, () -> resolutionParser.parse(stringResolution));
     }
 
     @Test
     public void testZeroInput() {
         stringResolution = "0x256";
-        assertThrows(IllegalArgumentException.class, () -> resolutionParser.parse(stringResolution));
+        assertThrows(ZeroArgumentException.class, () -> resolutionParser.parse(stringResolution));
     }
 }

@@ -1,3 +1,6 @@
+import exceptions.ExcessiveArgumentException;
+import exceptions.ZeroArgumentException;
+
 import java.util.Scanner;
 
 public class Main {
@@ -25,8 +28,10 @@ public class Main {
                 System.out.println("The resolution values may only use numeric characters! (e.g. \"256x256\") Please try again.");
             } catch (ArrayIndexOutOfBoundsException singleInputException) {
                 System.out.println("There must be two resolution values! (e.g. \"256x256\") Please try again.");
-            } catch (IllegalArgumentException excessiveInputException) {
+            } catch (ExcessiveArgumentException excessiveArgumentException) {
                 System.out.println("There must be at most two resolution values! (e.g. \"256x256\") Please try again.");
+            } catch (ZeroArgumentException zeroArgumentException) {
+                System.out.println("The resolution must be at least 1x1! Please try again.");
             }
         }
     }
