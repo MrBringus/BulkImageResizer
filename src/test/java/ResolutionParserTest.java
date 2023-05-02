@@ -4,25 +4,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ResolutionParserTest {
-    public ResolutionParser resolutionParser;
-    public String stringResolution;
-    public int[] resolutionArray;
-    public int[] testArray;
+    private ResolutionParser resolutionParser;
+    private String stringResolution;
 
     @BeforeEach
     public void beforeEach() {
         resolutionParser = new ResolutionParser();
         stringResolution = "";
-        resolutionArray = new int[2];
-        testArray = new int[2];
     }
 
     @Test
     public void testValidInput() {
         stringResolution = "256x256";
-        resolutionArray = resolutionParser.parse(stringResolution);
-        testArray = new int[]{256, 256};
-        assertArrayEquals(testArray, resolutionArray);
+        int[] expectedArray = new int[]{256, 256};
+        assertArrayEquals(expectedArray, resolutionParser.parse(stringResolution));
     }
 
     @Test
